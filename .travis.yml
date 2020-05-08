@@ -1,12 +1,8 @@
-before_script:
-  - mkdir -p data/db
-  - mongod --dbpath=data/db &
-  - sleep 5
-  - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
 language: node_js
 node_js:
   - "13"
 dist: trusty
+sudo: required
 services:
   - mongodb
   - redis-server
