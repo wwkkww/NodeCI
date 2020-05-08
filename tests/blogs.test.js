@@ -12,11 +12,11 @@ afterEach(async () => {
   await page.close();
 });
 
-afterAll(async done => {
-  // Closing the DB connection allows Jest to exit successfully.
-  await mongoose.connection.close()
-  done();
-});
+// afterAll(async done => {
+//   // Closing the DB connection allows Jest to exit successfully.
+//   await mongoose.connection.close()
+//   done();
+// });
 
 // GROUP TEST
 describe('When logged in', () => {
