@@ -4,11 +4,15 @@ node_js:
 dist: trusty
 sudo: required
 services:
+  - xvfb
   - mongodb
   - redis-server
 env:
+  - CHROMIUM=true
   - NODE_ENV=ci
   - PORT=3000
+before_install:
+  - PUPPETEER_PRODUCT=firefox npm install
 cache:
   directories: 
     - node_modules
