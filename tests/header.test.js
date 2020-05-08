@@ -20,7 +20,7 @@ afterEach(async () => {
 });
 
 afterAll(async done => {
-  // Closing the DB connection allows Jest to exit successfully.
+  // Closing the DB connection allows Jest to exit successfully. 
   await mongoose.connection.close()
   done();
 });
@@ -34,7 +34,7 @@ test('header has "Blogster" text', async () => {
 test('clicking login starts oAuth flow', async () => {
   await page.click('.right a');
   const url = await page.url();
-  // console.log('url', url);
+
   expect(url).toMatch(/accounts\.google\.com/);
 })
 
